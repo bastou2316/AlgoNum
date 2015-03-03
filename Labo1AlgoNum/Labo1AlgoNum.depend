@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1424639529 source:c:\users\joel\desktop\algonum\labo1algonum\main.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<FloatX.h>
+
+1424639448 c:\users\joel\desktop\algonum\labo1algonum\include\floatx.h
+	<iostream>
+	<cmath>
+	<cstdlib>
+
+1424765284 source:c:\users\joël\documents\he-arc\algonum\labo1algonum\main.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<FloatX.h>
+
+1424768571 c:\users\joël\documents\he-arc\algonum\labo1algonum\include\floatx.h
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<string>
+
+1424769848 source:c:\users\joël\documents\he-arc\algonum\labo1algonum\src\floatx.cpp
+	"FloatX.h"
+
+1424765284 source:c:\labo1algonum\main.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<FloatX.h>
+
+1424770876 c:\labo1algonum\include\floatx.h
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<string>
+
+1424771099 source:c:\labo1algonum\src\floatx.cpp
+	"FloatX.h"
+
