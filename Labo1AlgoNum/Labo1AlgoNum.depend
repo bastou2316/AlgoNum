@@ -40,3 +40,18 @@
 1424771099 source:c:\labo1algonum\src\floatx.cpp
 	"FloatX.h"
 
+1425382251 source:c:\users\bastou\documents\cours\algo_num\algonum\labo1algonum\main.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<FloatX.h>
+
+1425389969 c:\users\bastou\documents\cours\algo_num\algonum\labo1algonum\include\floatx.h
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<string>
+
+1425389288 source:c:\users\bastou\documents\cours\algo_num\algonum\labo1algonum\src\floatx.cpp
+	"FloatX.h"
+

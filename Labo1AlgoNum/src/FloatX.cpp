@@ -5,6 +5,7 @@
     Joel Rittiner
 */
 #include "FloatX.h"
+#include "windows.h"
 
 FloatX::FloatX(int nbBits)
 {
@@ -304,10 +305,24 @@ FloatX* FloatX::add(FloatX* toAdd)
 
 FloatX* FloatX::subtract(FloatX* toSub)
 {
-     toSub->changeSign();
-     FloatX* result = this->add(toSub);
-     toSub->changeSign();
-     return result;
+    FloatX* float1 = new FloatX(nbBitTot);
+    FloatX* float2 = new FloatX(nbBitTot);
+
+    long double nombre1;
+    long double nombre2;
+
+    float1->Setnumber(nombre1);
+    float2->Setnumber(nombre2);
+
+    FloatX* result = new FloatX(nbBitTot);
+    result = float1->add(float2);
+
+     FloatX* sol = new FloatX(sign,exponant,mantisse);
+
+     FloatX* addUn = new FloatX(GetnbBitTot());
+     addUn->Setnumber(1.0);
+     sol->add(addUn);
+     return sol;
 }
 
 string FloatX::complementADeux(string str)
