@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1426085352 source:c:\users\bastou\documents\cours\algo_num\squarematrix\bissection\main.cpp
+	<iostream>
+	<math.h>
+
