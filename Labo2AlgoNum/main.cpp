@@ -3,7 +3,6 @@
 
 using namespace std;
 float fun(float x);
-void bisection(float a, float b, float eps);
 
 //val 1 pour la première fonction et val 2 pour la 2ème
 #define val 1
@@ -62,10 +61,6 @@ int main()
 return 0;
 }
 
-void bisection(float a, float b, float eps)
-{
-
-}
 
 float fun(float x)
     {
