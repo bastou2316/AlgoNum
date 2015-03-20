@@ -24,10 +24,11 @@ using namespace std;
 //      Définition      //
 //*--------------------*//
 int askInput(std::string message, int value);
-void findIntersects(float a, float b, float eps, float rangeSize, int method);
+void findIntersects(float a, float b, float eps, float rangeSize, int method,int fonction);
 float bissectionV1(float a, float b, float eps);
 float bissectionV2(float a, float b, float eps);
 float fun(float x);
+float setInterval(int fonction, float a, float b);
 
 //val 1 pour la première fonction et val 2 pour la 2ème
 #define error -99999      //erreur
@@ -42,6 +43,7 @@ int main()
     //Valeurs par défaut
     float a = -100;         //Valeurs d'intervalles
     float b = 100;
+    float rangeSize; //Présision de la fonction
 
     bool again = false;     //Bouclage
 
@@ -54,6 +56,8 @@ int main()
             system("CLS");
 
         fonction = askInput("Quelle fonction voulez-vous resoudre? ", 1);
+        //Choisir la précision en fonction de la fonction utilisé
+        rangeSize = setInterval(fonction,a,b);
         //faire un affichage des fonctions
 
         int method = askInput("Quelle methode voulez vous utiliser (1 ou 2)", 2);
@@ -63,8 +67,9 @@ int main()
 
         cout << endl;
 
+
         //Résolution
-        findIntersects(a, b, 0.0001, 1, method);
+        findIntersects(a, b, 0.0001, rangeSize, method, fonction);
 
         cout << endl;
 
@@ -91,14 +96,30 @@ int askInput(std::string message, int value)
     return value;
 }
 
-void findIntersects(float a, float b, float eps, float rangeSize, int method)
+void findIntersects(float a, float b, float eps, float rangeSize, int method,int fonction)
 {
     float range;            //Variable d'intervalle
     int i = 0;              //Compteur de solutions
+    float answer;
 
     for(range = a; range < b; range+=rangeSize+eps)
     {
-        float answer = bissectionV1(range, range+rangeSize, eps);
+        switch(fonction)
+        {
+     case 1:
+            {
+            answer = bissectionV1(range, range+rangeSize, eps);
+            }
+     case 2:
+            {
+            answer = bissectionV2(range, range+rangeSize, eps);
+            }
+     default:
+            {
+                //rien
+            }
+
+        }
 
         //Solutions trouvés
         if(answer != error)
@@ -143,8 +164,7 @@ float bissectionV1(float x1, float x2, float eps)
         return error;
 }
 
-<<<<<<< HEAD
-=======
+
 float bissectionV2(float x1, float x2, float eps)
 {
     //Initialisation
@@ -183,7 +203,7 @@ float bissectionV2(float x1, float x2, float eps)
     else                    //Ne tend pas vers 0
         return error;
 }
->>>>>>> ed36db29db7b21264197411d6ee0c038209ddcb2
+
 
 float fun(float x)
 {
@@ -191,7 +211,7 @@ float fun(float x)
      {
      case 1:
         {
-        return sin(x);// - x / 13;
+        return sin(x) - x / 13;
         }
      case 2:
         {
@@ -208,8 +228,38 @@ float fun(float x)
      default:
         {
         cout << "La valeur doit etre compris entre 1 et 4" << endl;
+        return 0;
         }
      }
+}
+
+//On spécifie les intervals pour chaques fonctions afin de trouver toutes les solutions
+float setInterval(int fonction, float a, float b)
+{
+    switch(fonction)
+     {
+     case 1:
+        {
+        return 1;
+        }
+     case 2:
+        {
+        return fabs(a-b); //Car on a que une solution, on prends donc tout l'interval(200 par défault)
+        }
+     case 3:
+        {
+        return fabs(a-b); //Car on a que une solution, on prends donc tout l'interval(200 par défault)
+        }
+     case 4:
+        {
+        return fabs(a-b); //Car on a que une solution, on prends donc tout l'interval(200 par défault)
+        }
+     default:
+        {
+        return 1;
+        }
+     }
+
 }
 
 
